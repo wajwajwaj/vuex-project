@@ -1,6 +1,6 @@
 <template>
   <div>
-    <span>当前count的值是：</span>
+    <div>当前count的值是： {{ $store.state.count }}</div>
     <button>+1</button>
   </div>
 </template>
