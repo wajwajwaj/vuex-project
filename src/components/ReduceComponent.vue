@@ -1,6 +1,7 @@
 <template>
   <div>
-    <div>当前count的值是：{{count}}</div>
+    <!-- <div>当前count的值是：{{count}}</div> -->
+    <div>{{showNumber}}</div>
     <button @click="onHandleClick">-1</button>
     <button @click="onHandleClickN">-N</button>
     <button @click="asyncReduce">Async - 1</button>
@@ -9,13 +10,14 @@
 </template>
 
 <script>
-import { mapState, mapMutations, mapActions } from 'vuex'
+import { mapState, mapMutations, mapActions, mapGetters } from 'vuex'
 export default {
   data () {
     return {}
   },
   computed: {
-    ...mapState(['count'])
+    ...mapState(['count']),
+    ...mapGetters(['showNumber'])
   },
   methods: {
     ...mapMutations(['reduce', 'reduceN']),

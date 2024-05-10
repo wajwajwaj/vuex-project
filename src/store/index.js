@@ -8,7 +8,11 @@ export default new Vuex.Store({
   state: {
     count: 0
   },
+  // 对state里的数据进行加工，形成新的数据，蕾类似计算属性
   getters: {
+    showNumber: state => {
+      return '【当前最新的数据是】' + state.count
+    }
   },
   // 用于修改store里的数据，千万不要直修改store里的数据
   // 这种写法虽然繁琐点，但是能清晰的监控所有数据的变化
@@ -30,6 +34,7 @@ export default new Vuex.Store({
       state.count -= step
     }
   },
+  // 用于执行异步的
   actions: {
     // content则是能获取到mutations里面所有的方法
     // 在actions里面不，不能直接修改state里面的数据，必须通过mutations里的方法才行

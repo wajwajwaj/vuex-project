@@ -1,6 +1,7 @@
 <template>
   <div>
-    <div>当前count的值是： {{ $store.state.count }}</div>
+    <!-- <div>当前count的值是： {{ $store.state.count }}</div> -->
+    <div>{{ $store.getters.showNumber }}</div>
     <button @click="onHandleClick">+1</button>
     <button @click="onHandleClickN">+N</button>
     <button @click="onHandleAsync">Async + 1</button>
